@@ -3,7 +3,7 @@ from(
 
 select count(class.id) as total_lesson, teacher_id
 from class
-where month(time_of_lesson) = MONTH(curdate())
+where month(time_of_lesson) = MONTH(curdate()) and year(time_of_lesson) = year(curdate())
 Group by teacher_id
 ) Lessons_given
 
